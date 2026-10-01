@@ -206,6 +206,7 @@ a{text-decoration:none;}
 .blob{position:absolute; border-radius:50%; filter:blur(0px); opacity:.55;}
 .blob1{width:260px;height:260px; background:radial-gradient(circle at 30% 30%,#B7EBDD,transparent 70%); top:-30px; right:10%;}
 .blob2{width:180px;height:180px; background:radial-gradient(circle at 30% 30%,#BFE3F2,transparent 70%); bottom:0; left:0;}
+.hero-image{position:relative; z-index:2; display:block; width:100%; height:420px; object-fit:cover; border-radius:var(--radius-lg); box-shadow:var(--shadow-soft);}
 .appt-card{
   position:relative; z-index:2; padding:28px; max-width:340px; margin-left:auto;
 }
@@ -447,41 +448,12 @@ footer a:hover{color:#fff;}
         <div class="hero-visual">
           <div class="blob blob1"></div>
           <div class="blob blob2"></div>
-          <div class="glass appt-card">
-            <div class="tooth-orbit"><i class="fa-solid fa-tooth"></i></div>
-            <p class="fw-bold mb-1" style="color:var(--ink)">Today in DG Khan</p>
-            <p class="small mb-3" style="color:var(--ink-soft)"><span class="pulse-dot me-1"></span>3 chairs open right now</p>
-            <div class="appt-row"><span class="small text-muted">4:30 PM</span><span class="fw-semibold small">Scaling &amp; Polishing</span></div>
-            <div class="appt-row"><span class="small text-muted">5:15 PM</span><span class="fw-semibold small">Child Checkup</span></div>
-            <div class="appt-row"><span class="small text-muted">6:00 PM</span><span class="fw-semibold small">Whitening Session</span></div>
-            <a href="tel:+923333301754" class="btn-coral w-100 justify-content-center mt-3"><i class="fa-solid fa-calendar-check"></i> Grab this slot</a>
-          </div>
+          <img class="hero-image" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?fm=jpg&amp;q=60&amp;w=3000&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVudGFsJTIwY2xpbmljfGVufDB8fDB8fHww" alt="Modern dental clinic interior in Dera Ghazi Khan" fetchpriority="high">
         </div>
       </div>
     </div>
   </div>
 </header>
-
-<script>
-  const parent = document.querySelector('.hero-visual');
-const apptCard = document.querySelector('.glass.appt-card');
-
-if (parent && apptCard) {
-  const img = document.createElement('img');
-  img.src = "https://images.unsplash.com/photo-1629909613654-28e377c37b09?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVudGFsJTIwY2xpbmljfGVufDB8fDB8fHww";
-  img.className = 'hero-image-replacement';
-  // Copy some styles or add basic ones to ensure it fits well
-  img.style.maxWidth = '100%';
-  img.style.height = 'auto';
-  img.style.borderRadius = '20px';
-  img.style.boxShadow = '0 8px 32px 0 rgba(31, 38, 135, 0.37)';
-  
-  parent.replaceChild(img, apptCard);
-  data = { success: true };
-} else {
-  data = { success: false, error: 'Elements not found' };
-}
-</script>
 
 <!-- ================= TRUST STRIP ================= -->
 <div class="trust-strip">
