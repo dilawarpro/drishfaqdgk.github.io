@@ -462,6 +462,27 @@ footer a:hover{color:#fff;}
   </div>
 </header>
 
+<script>
+  const parent = document.querySelector('.hero-visual');
+const apptCard = document.querySelector('.glass.appt-card');
+
+if (parent && apptCard) {
+  const img = document.createElement('img');
+  img.src = "https://images.unsplash.com/photo-1629909613654-28e377c37b09?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVudGFsJTIwY2xpbmljfGVufDB8fDB8fHww";
+  img.className = 'hero-image-replacement';
+  // Copy some styles or add basic ones to ensure it fits well
+  img.style.maxWidth = '100%';
+  img.style.height = 'auto';
+  img.style.borderRadius = '20px';
+  img.style.boxShadow = '0 8px 32px 0 rgba(31, 38, 135, 0.37)';
+  
+  parent.replaceChild(img, apptCard);
+  data = { success: true };
+} else {
+  data = { success: false, error: 'Elements not found' };
+}
+</script>
+
 <!-- ================= TRUST STRIP ================= -->
 <div class="trust-strip">
   <div class="container-narrow d-flex flex-wrap justify-content-center gap-4 gap-md-5">
