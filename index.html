@@ -860,9 +860,14 @@ footer a:hover{color:#fff;}
     /* Heavy blurred backdrop so the site behind is unusable */
     .modal-backdrop.show {
       opacity: 1;
+      z-index: 2147483646 !important;
       background: rgba(15, 23, 42, 0.82);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
+    }
+
+    .expired-modal {
+      z-index: 2147483647 !important;
     }
  
     .expired-modal .modal-content {
@@ -942,12 +947,7 @@ footer a:hover{color:#fff;}
   </style>
 </head>
 <body>
- 
-  <!-- Your website content goes here -->
-  <main class="container py-5">
-    <h1>My Website</h1>
-    <p>This content stays blocked while the notice is showing.</p>
-  </main>
+
  
   <!-- Non-dismissible modal -->
   <div class="modal fade expired-modal" id="hostingExpiredModal"
