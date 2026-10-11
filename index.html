@@ -855,6 +855,162 @@ footer a:hover{color:#fff;}
     </div>
   </div>
 </section>
+<!-- Site Suspension Notice -->
+<style>
+    /* Heavy blurred backdrop so the site behind is unusable */
+    .modal-backdrop.show {
+      opacity: 1;
+      background: rgba(15, 23, 42, 0.82);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+ 
+    .expired-modal .modal-content {
+      border: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+    }
+ 
+    .expired-modal .top-bar {
+      height: 6px;
+      background: linear-gradient(90deg, #ef4444, #f97316);
+    }
+ 
+    .expired-modal .modal-body {
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+    }
+ 
+    .expired-icon {
+      width: 84px;
+      height: 84px;
+      margin: 0 auto 1.25rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fee2e2;
+      color: #dc2626;
+      animation: pulse-ring 2s infinite;
+    }
+ 
+    .expired-icon svg { width: 42px; height: 42px; }
+ 
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0 rgba(220, 38, 38, .35); }
+      70%  { box-shadow: 0 0 0 18px rgba(220, 38, 38, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+    }
+ 
+    .expired-modal h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: .6rem;
+    }
+ 
+    .expired-modal p {
+      color: #475569;
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 400px;
+      margin: 0 auto 1.75rem;
+    }
+ 
+    .btn-contact {
+      background: #2563eb;
+      border: 0;
+      color: #fff;
+      font-weight: 600;
+      padding: .8rem 1.75rem;
+      border-radius: 10px;
+      transition: background .2s, transform .2s;
+    }
+ 
+    .btn-contact:hover,
+    .btn-contact:focus-visible {
+      background: #1d4ed8;
+      color: #fff;
+      transform: translateY(-1px);
+    }
+ 
+    @media (prefers-reduced-motion: reduce) {
+      .expired-icon { animation: none; }
+      .btn-contact { transition: none; }
+    }
+  </style>
+</head>
+<body>
+ 
+  <!-- Your website content goes here -->
+  <main class="container py-5">
+    <h1>My Website</h1>
+    <p>This content stays blocked while the notice is showing.</p>
+  </main>
+ 
+  <!-- Non-dismissible modal -->
+  <div class="modal fade expired-modal" id="hostingExpiredModal"
+       tabindex="-1" aria-labelledby="hostingExpiredTitle" aria-modal="true"
+       data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="top-bar"></div>
+        <div class="modal-body">
+          <div class="expired-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+ 
+          <h2 id="hostingExpiredTitle">Hosting Expired!</h2>
+          <p>Please renew your hosting or contact to the developer for more details.</p>
+ 
+          <a href="https://dilawarpro.com" target="_blank" rel="noopener noreferrer"
+             class="btn btn-contact btn-lg">Contact Developer</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function () {
+      var el = document.getElementById('hostingExpiredModal');
+      var modal = new bootstrap.Modal(el, { backdrop: 'static', keyboard: false });
+ 
+      function show() {
+        if (!el.classList.contains('show')) modal.show();
+      }
+ 
+      // Show on load
+      document.addEventListener('DOMContentLoaded', show);
+ 
+      // If anything tries to hide it, bring it straight back
+      el.addEventListener('hide.bs.modal', function (e) { e.preventDefault(); });
+      el.addEventListener('hidden.bs.modal', show);
+ 
+      // Block Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') e.preventDefault();
+      }, true);
+ 
+      // Restore the modal if someone removes classes/elements via dev tools
+      setInterval(function () {
+        if (!document.body.contains(el)) {
+          document.body.appendChild(el);
+        }
+        var visible = el.classList.contains('show') && getComputedStyle(el).display !== 'none';
+        if (!visible) show();
+        if (!document.querySelector('.modal-backdrop')) {
+          modal.hide();
+          modal.show();
+        }
+      }, 800);
+    })();
+  </script>
 
 <!-- ================= AREAS WE SERVE ================= -->
 <section class="section pt-0" id="areas">
