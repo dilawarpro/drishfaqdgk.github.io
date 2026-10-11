@@ -41,7 +41,7 @@
 <!-- Fancybox -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css">
 <!-- Toastify -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.css"> -->
 
 <!-- Schema: Dentist / LocalBusiness -->
 <script type="application/ld+json">
@@ -1116,7 +1116,7 @@ footer a:hover{color:#fff;}
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
 <script>
@@ -1173,35 +1173,35 @@ footer a:hover{color:#fff;}
   setInterval(tickCountdown, 1000);
 
   /* ---------- Toastify rotating "recent activity" notifications ---------- */
-  var activity = [
-    { name: "Ahmed", flag: "🇵🇰", action: "just booked Teeth Cleaning & Whitening" },
-    { name: "Fatima", flag: "🇵🇰", action: "just booked a Child Checkup" },
-    { name: "Bilal", flag: "🇵🇰", action: "just completed a Root Canal" },
-    { name: "Sana", flag: "🇵🇰", action: "just started Braces treatment" },
-    { name: "Usman", flag: "🇵🇰", action: "just booked an Emergency slot" },
-    { name: "Ayesha", flag: "🇵🇰", action: "just booked a Dental Implant consult" },
-    { name: "Hamza", flag: "🇵🇰", action: "just booked Scaling & Polishing" }
-  ];
-  function showActivityToast(){
-    var pick = activity[Math.floor(Math.random() * activity.length)];
-    if (typeof Toastify !== "function") return;
-    Toastify({
-      text: pick.flag + " " + pick.name + " from DG Khan " + pick.action,
-      duration: 4500,
-      gravity: "bottom",
-      position: "center",
-      close: true,
-      stopOnFocus: true,
-      style: {
-        background: "rgba(16,42,46,0.92)",
-        borderRadius: "14px",
-        fontFamily: "'Plus Jakarta Sans', sans-serif",
-        boxShadow: "0 14px 30px rgba(0,0,0,.25)"
-      }
-    }).showToast();
-  }
-  setTimeout(showActivityToast, 4000);
-  setInterval(showActivityToast, 16000);
+  // var activity = [
+  //   { name: "Ahmed", flag: "🇵🇰", action: "just booked Teeth Cleaning & Whitening" },
+  //   { name: "Fatima", flag: "🇵🇰", action: "just booked a Child Checkup" },
+  //   { name: "Bilal", flag: "🇵🇰", action: "just completed a Root Canal" },
+  //   { name: "Sana", flag: "🇵🇰", action: "just started Braces treatment" },
+  //   { name: "Usman", flag: "🇵🇰", action: "just booked an Emergency slot" },
+  //   { name: "Ayesha", flag: "🇵🇰", action: "just booked a Dental Implant consult" },
+  //   { name: "Hamza", flag: "🇵🇰", action: "just booked Scaling & Polishing" }
+  // ];
+  // function showActivityToast(){
+  //   var pick = activity[Math.floor(Math.random() * activity.length)];
+  //   if (typeof Toastify !== "function") return;
+  //   Toastify({
+  //     text: pick.flag + " " + pick.name + " from DG Khan " + pick.action,
+  //     duration: 4500,
+  //     gravity: "bottom",
+  //     position: "center",
+  //     close: true,
+  //     stopOnFocus: true,
+  //     style: {
+  //       background: "rgba(16,42,46,0.92)",
+  //       borderRadius: "14px",
+  //       fontFamily: "'Plus Jakarta Sans', sans-serif",
+  //       boxShadow: "0 14px 30px rgba(0,0,0,.25)"
+  //     }
+  //   }).showToast();
+  // }
+  // setTimeout(showActivityToast, 4000);
+  // setInterval(showActivityToast, 16000);
 
   /* ---------- Chatbot ---------- */
   var chatToggle = document.getElementById("chatToggle");
